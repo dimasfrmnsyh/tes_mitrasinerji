@@ -87,7 +87,6 @@
                                   ?>
                                     <tr>
                                     <td class="text-center">
-                                      <button type="button" class="btn btn-primary btn-xs btn_edit" data-rowid="<?php echo $items['rowid'];?>"><i class="fa fa-pencil"></i> Edit</button>
                                       <a href="<?php echo site_url('sales/del_cart/' . $items['rowid']);?>" class="btn btn-danger btn_hapus btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
                                     <td><?php echo $i++; ?></td>
