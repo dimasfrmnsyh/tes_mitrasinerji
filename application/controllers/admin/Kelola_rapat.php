@@ -51,40 +51,38 @@ class Kelola_rapat extends CI_Controller {
     }
  
     public function tambah() {
-        $data['data_ruangan'] = $this->model_ruangan->get_nama_ruangan();
-        if($this->input->post('submit')) { 
-            // validasi 
-            $this->form_validation->set_rules('nama_rapat', 'Nama Rapat', 'trim|required'); 
-            $this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required'); 
-            $this->form_validation->set_rules('jam', 'Jam ', 'trim|required'); 
+        $data['ruangan'] = $this->model_ruangan->get_nama_ruangan();
+        if($this->input->post('submit')) {
 
+            // validasi
+            $this->form_validation->set_rules('nama_rapat', 'nama_rapat', 'trim|required');
+            $this->form_validation->set_rules('tanggal', 'tanggal', 'trim|required');
+    
             if ($this->form_validation->run() == false) {
-                $this->load->view('admin/layout/header', array('title' => 'Tambah rapat', 'menu' => 'kelola_rapat'));
-                $this->load->view('admin/kelola_rapat/tambah',$data);
+                $this->load->view('admin/layout/header', array('title' => 'Pesan', 'menu' => 'kelola_rapat'));
+                $this->load->view('admin/kelola_rapat/tambah');
             } else {
-
-                $data['nama_rapat'] = $this->input->post('nama_rapat'); 
-                $data['tanggal'] = $this->input->post('tanggal'); 
-                $data['jam'] = $this->input->post('jam'); 
-                $data['id_ruangan'] = $this->input->post('id_ruangan'); 
-
-
-                if($this->model_rapat->insert($data)) {
-                    $this->session->set_flashdata('sukses', 'Berhasil menambah Data rapat.');
+                $data_insert['nama_rapat'] = $this->input->post('nama_rapat'); 
+                $data_insert['tanggal'] = $this->input->post('tanggal'); 
+                $data_insert['jam'] = $this->input->post('jam'); 
+                $data_insert['id_ruangan'] = $this->input->post('id_ruangan'); 
+    
+                if($this->model_rapat->insert($data_insert)) {
+                    $this->session->set_flashdata('sukses', 'Berhasil Model Rapat.');
                 } else {
-                    $this->session->set_flashdata('error', 'Gagal menambah Data rapat.');
+                    $this->session->set_flashdata('error', 'Gagal Model Rapat.');
                 }
                 redirect(site_url('admin/kelola_rapat'), 'refresh');
             }
         } else {
-            $this->load->view('admin/layout/header', array('title' => 'Tambah rapat', 'menu' => 'kelola_rapat'));
+            $this->load->view('admin/layout/header', array('title' => 'Tambah Pesan', 'menu' => 'kelola_rapat'));
             $this->load->view('admin/kelola_rapat/tambah',$data); 
         }
     }
+ 
 
     public function edit($id_rapat = 0) {
         $data['data_ruangan'] = $this->model_ruangan->get_nama_ruangan();
-   
         $data['rapat'] = $this->model_rapat->get($id_rapat); 
         if(($id_rapat == 0) || (!$data['rapat'])) {
             $this->session->set_flashdata('info', 'rapat tidak ditemukan.');

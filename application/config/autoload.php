@@ -99,7 +99,8 @@ $autoload['drivers'] = array();
 */
 $autoload['helper'] = array(
 	'url',
-	'custom' 
+	'custom',
+	'form', 
 	);
 
 /*
@@ -144,6 +145,3 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array(
-	'model_admin'
-	);

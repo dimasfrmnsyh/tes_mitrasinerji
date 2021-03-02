@@ -1,9 +1,3 @@
-<?php
-$admin_id = $this->session->admin_id;
-$menu = (isset($menu)) ? $menu : '' ; 
-
-?>
-
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -64,7 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>PT</b>S</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg text-left"><i class="fa fa-gg"></i> BAPPPPEDA</span>
+      <span class="logo-lg text-left"><i class="fa fa-gg"></i> MITRA SINERJI</span>
     </span>
 
     <!-- Header Navbar -->
@@ -80,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="<?php echo base_url('login/destroy') ?>" class="sign-out"> 
+            <a href="<?php echo base_url('') ?>" class="sign-out"> 
               <span><i class="fa fa-sign-out"></i></span> 
               <span class="hidden-xs">Sign Out</span>
             </a> 

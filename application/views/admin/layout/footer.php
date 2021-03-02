@@ -4,7 +4,7 @@
     <div class="pull-right hidden-xs">
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; <?php echo date('Y'); ?> <i class="fa fa-gg"></i>BAPPPPEDA SUMEDANG</strong> 
+    <strong>Copyright &copy; <?php echo date('Y'); ?> <i class="fa fa-gg"></i>MITRA SINERJI TEKNOINDO</strong> 
   </footer>
 </div>
 <!-- ./wrapper -->
